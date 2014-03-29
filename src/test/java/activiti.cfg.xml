@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="processEngineConfiguration"
+		class="org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration">
+
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/leaveApp" />
+		<property name="jdbcDriver" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUsername" value="root" />
+		<property name="jdbcPassword" value="123456" />
+
+		<property name="databaseSchemaUpdate" value="false" />
+
+		<property name="jobExecutorActivate" value="false" />
+
+		<!-- <property name="history" value="audit" /> -->
+		<!-- <property name="processDefinitionCacheLimit" value="10" />-->
+		
+		<!-- <property name="mailServerHost" value="mail.my-corp.com" />
+		<property name="mailServerPort" value="5025" />-->
+		
+		<!-- 
+		org.activiti.engine.impl.cfg.StandaloneProcessEngineConfiguration: the process engine is used in a standalone way. Activiti will take care of the transactions. By default, the database will only be checked when the engine boots (and an exception is thrown if there is no Activiti schema or the schema version is incorrect).
+		org.activiti.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration: this is a convenience class for unit testing purposes. Activiti will take care of the transactions. An H2 in-memory database is used by default. The database will be created and dropped when the engine boots and shuts down. When using this, probably no additional configuration is needed (except when using for example the job executor or mail capabilities).
+		org.activiti.spring.SpringProcessEngineConfiguration: To be used when the process engine is used in a Spring environment. See the Spring integration section for more information.
+		org.activiti.engine.impl.cfg.JtaProcessEngineConfiguration: To be used when the engine runs in standalone mode, with JTA transactions
+		
+		
+		 -->
+		
+	</bean>
+
+</beans>
